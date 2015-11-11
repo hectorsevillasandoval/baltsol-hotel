@@ -1,0 +1,29 @@
+{
+  "name": "baltsol-hotel",
+  "version": "1.0.0",
+  "description": "Plantilla web para Baltsol Hotel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barcadictni/baltsol-hotel.git"
+  },
+  "author": "Hector Sevilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barcadictni/baltsol-hotel/issues"
+  },
+  "homepage": "https://github.com/barcadictni/baltsol-hotel#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-newer": "^1.0.0",
+    "gulp-stylus": "^2.1.0",
+    "gulp-watch": "^4.3.5",
+    "gulp-webserver": "^0.9.1",
+    "nib": "^1.1.0"
+  }
+}
