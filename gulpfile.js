@@ -5,7 +5,10 @@ var gulp = require('gulp'),
   nib = require('nib'),
   imagemin= require('gulp-imagemin'),
 	minify = require('gulp-minify-css'),
-	watch = require('gulp-watch');
+	watch = require('gulp-watch'),
+  browserify = require('browserify'),
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer');
 
 
 var config = {
@@ -22,6 +25,11 @@ var config = {
   images: {
     watch: './src/images/*',
     output: './build/images/'
+  },
+  scripts: {
+    main: './src/scripts/main.js',
+    watch: './src/scripts/**/*.js',
+    output: './build/js'
   }
 }
 
@@ -47,6 +55,16 @@ gulp.task('imagemin', function(){
 
   });
 
+gulp.task('build:js', function(){
+    return browserify(config.scripts.main)
+      .bundle()
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest(config.scripts.output));
+
+  });
+
 gulp.task('build:css', function() {
     // content
     gulp.src(config.styles.main)
@@ -68,10 +86,11 @@ gulp.task('watch', function() {
     // content
     gulp.watch(config.styles.watch, ['build:css']);
     gulp.watch(config.html.watch, ['build:html']);
+    gulp.watch(config.scripts.watch, ['build:js']);
     gulp.watch(config.images.watch, ['imagemin']);
 });
 
-gulp.task('build',['build:css']);
+gulp.task('build',['build:css','build:js']);
 
 gulp.task('default',['server', 'watch','build'], function() {
     // content
