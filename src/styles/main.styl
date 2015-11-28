@@ -1,6 +1,237 @@
 @import './normalize.css'
 @import './reset.css'
+@import './fonts.styl'
+
+gris-oscuro = #494947
+rojo = #711D03
+naranja = #F76031
+cafe = #711D04
 
 
+html
+	font-size 16px !important
 body
-	background-color: pink
+	font-size 1rem !important
+	box-sizing border-box
+	font-family: 'nexa'  !important
+
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none !important
+	
+h1
+	color cafe
+	text-transform uppercase
+	text-align: center
+	font-family: pooRichard !important
+h2
+	text-transform: uppercase
+
+ul
+	list-style: none
+
+alinear()
+	display inline-block
+
+[class^="icon-"], [class*=" icon-"]
+    /* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+
+.icon-icon-6
+	&:before
+		content: "\e900"
+
+.icon-icon-5
+	&:before
+		content: "\e901"
+
+.icon-icon-4
+	&:before
+		content: "\e902"
+
+.icon-icon-3
+	&:before
+		content: "\e903"
+
+.icon-icon-2
+	&:before 
+		content: "\e904"
+
+.icon-icon-1
+	&:before
+		content: "\e905"
+
+
+// HELPER CLASSES
+
+.hide
+	height 0
+.show
+	height auto
+.center
+	text-align: center
+.white
+	color white
+.boton
+	text-transform uppercase
+	color white
+	font-size 1.3rem
+	border 0
+	padding .5rem
+
+.transparente
+	font-size: 2rem
+	background-color: transparent
+	border 1px solid white
+
+.btn-form
+	background-color naranja
+	width 100%
+	margin-top: .5rem
+	
+.pre-header
+	background-color gris-oscuro
+	color white
+	text-align: center
+	a
+		color white
+	
+	.facebook
+		padding-top .5rem
+		padding-bottom .5rem
+		vertical-align middle
+		i
+			font-size 2rem
+	
+	.idiomas
+		padding .5rem 0
+		a
+			alinear()
+			&.ingles
+				padding-right 1rem
+
+.header
+	padding-top 1rem
+	padding-bottom: 1rem
+	
+	button
+		color white
+		background-color: rojo
+		
+		i
+			color white
+	.menu-mobile
+		background-color: gris-oscuro
+		transition all .5s ease
+		ul
+			list-style none
+		a
+			color white
+			text-transform: uppercase
+			font-size 1.3rem
+			display block
+			padding-top 1rem
+			padding-bottom 1rem
+	.logo
+		vertical-align middle
+	.menu
+		text-transform: uppercase
+		vertical-align middle
+		margin-top: 2.2rem
+		li
+			alinear()
+			margin-right: .5rem
+		a
+			color black
+			display block
+			font-size: 1.1rem
+			&:hover
+				border-bottom 2px solid black
+
+.principal
+	.formulario-reserva
+		text-align: center
+		background-color cafe
+		padding 4rem 0
+		.large
+			background-color: rgba(0, 0, 0, .75)
+		input
+			&[type="number"]
+			&[type="text"]
+				padding .6rem .8rem
+				margin .5rem 0
+				width 100%
+				display block
+				color cafe
+	
+	.cajas
+		margin-top: 1.5rem
+		.box
+			margin-bottom: 2rem
+			.title
+				text-transform: uppercase
+				color cafe
+				font-size 2rem
+			.btn-boxes
+				background-color naranja
+			.separator
+				background-color cafe
+				height .4rem
+				width 85%
+				margin-bottom: 1rem
+			.content
+				font-size: 1.2rem
+			.amenities
+				text-transform: uppercase
+				li
+					margin-top .5rem
+					span
+						font-size: 1.5rem
+			&-amenities
+				li
+					color cafe
+
+.pre-footer
+	text-align: center
+	background-color: cafe /* temporal */
+	padding-top: 2rem
+	padding-bottom: 2rem
+	color white
+
+.footer
+	background-color: gris-oscuro
+	padding-bottom .6rem
+	padding-top: .6rem
+	.copy
+		color white
+		text-align: center
+
+
+@media screen and (min-width:900px)
+	.large
+		max-width (1160/16)rem
+		margin-left: auto
+		margin-right: auto
+	.slogan
+		font-size: 1.2rem
+		line-height 1.5
+	.header
+		.menu
+			text-align: right
+			li
+				margin-right: 1rem
+			a
+				font-size: 1.6rem
+

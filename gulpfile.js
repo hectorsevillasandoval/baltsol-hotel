@@ -8,7 +8,8 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
   browserify = require('browserify'),
   source = require('vinyl-source-stream'),
-  buffer = require('vinyl-buffer');
+  buffer = require('vinyl-buffer'),
+  uglify = require('gulp-uglify');
 
 
 var config = {
